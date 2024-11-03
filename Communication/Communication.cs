@@ -48,21 +48,6 @@ namespace Communication
      * If you need to add a constraint to interfaces\implementation\types, feel free to contact us and request it.
      */
 
-    // added by me
-    public interface IHandlers<TRequest, TReply> : IReplier<TRequest, TReply> where TRequest : class where TReply : class
-    {
 
-        IEnumerable<Func<TRequest, TReply>> Handlers { get; }
-    }
-    public interface IMySubject<TMessage> : ISubject<TMessage>, ISubscriber<TMessage> where TMessage : class
-    { }
-
-    public interface ITransformer<TMessageIn, TMessageOut, TRequest, TReply>
-         where TMessageIn : class where TMessageOut : class where TRequest : class where TReply : class
-    {
-        TMessageIn Transform(TRequest message);
-        TReply Transform(TMessageOut request);
-
-    }
 
 }
